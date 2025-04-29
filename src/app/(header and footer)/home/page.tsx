@@ -1,8 +1,22 @@
 import Image from "next/image";
 import CourseCard from "@/components/course-card/course-card";
+import Carroussel from "@/components/carrossel/Carroussel";
 
 export default function Home(){
- return (
+    let cards = [
+        {
+            userImage:'userImg',
+            title:'title 1',
+            comment:'comment'
+        },
+        {
+            userImage:'userImg2',
+            title:'title 2',
+            comment:'comment 2'
+        }
+    ]
+ 
+    return (
     <>
        <section className="min-h-[100dvh] w-full flex flex-col justify-around pt-[5%] pl-[10%] pr-[10%]">
         <article className="flex justify-around items-center gap-[10%] w-full h-[80vh]">
@@ -67,8 +81,10 @@ export default function Home(){
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
             </article>
-            
         </section>   
+        <section>
+        <Carroussel cards={cards}/>
+        </section>
     </>
  )   
 }
