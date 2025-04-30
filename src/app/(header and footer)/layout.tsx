@@ -17,7 +17,7 @@ export default function RootLayoutPage({
                 <li><Link href="/home">Página inicial</Link></li>
                 <li>Cursos</li>
                 <li>Parcerias</li>
-                <li>Voluntariado</li>
+                <li><Link href="/voluntariado">Voluntariado</Link></li>
                 <li><Link href="/sobre-nos">Sobre nós</Link></li>
             </ul>
             <div className="flex items-center justify-center">
