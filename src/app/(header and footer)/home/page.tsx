@@ -60,7 +60,7 @@ export default function Home(){
         <section className="h-[60dvh] w-full bg-amber-400 flex items-center justify-center flex-row mt-10 mb-10 gap-20">
             <div className="text-center w-1/4 text-3xl rounded-t-full rounded-br-full bg-amber-200 h-3/4 flex items-center justify-center">Frase motivadora</div>
             <div className="w-2/4">
-                <h2 className="text-[6vw]">Sobre o instituto</h2>  
+                <h2 className="text-6xl">Sobre o instituto</h2>  
                 <p className="text-1xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.</p>
             </div>
         </section>
@@ -78,7 +78,7 @@ export default function Home(){
 
         </section>
         <section className="w-full bg-sky-300 flex items-center justify-center flex-col gap-20 p-20 box-border">
-            <h2>Nossos cursos</h2>
+            <h2 className="text-6xl">Nossos cursos</h2>
             <article className="flex flex-wrap justify-center gap-x-30 gap-y-20"> 
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
@@ -88,7 +88,7 @@ export default function Home(){
             </article>
         </section>   
         <section className="p-10">
-            <div className="text-center w-full p-10 text-5xl">
+            <div className="text-center w-full p-10 text-6xl">
                 Relatos
             </div>
             <div className="h-160">
@@ -96,7 +96,7 @@ export default function Home(){
             </div>
         </section>
         <section className="p-10 w-full flex items-center justify-center flex-col gap-20 p-20 box-border">
-            <div className="text-center w-full p-10 text-5xl">
+            <div className="text-center w-full p-10 text-6xl">
                 Nossas conquistas
             </div>
             <div className="h-160">
@@ -106,6 +106,26 @@ export default function Home(){
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
             </article>
             </div>
+        </section>
+        <section className="p-10 w-full flex items-center justify-center flex-col p-20 box-border">
+            <div className="w-full p-10 flex items-center justify-center flex-col mb-20">
+                <h2 className="text-6xl text-center">Empresas parceiras</h2>
+                <h3 className="text-1xl text-center text-gray-400">Lorem ipsum dolor sit amet, consectetur</h3>
+            </div>
+            <div className="flex items-center justify-around w-10/12 mb-20">
+                <span>icon 1</span>
+                <span>icon 2</span>
+                <span>icon 3</span>
+                <span>icon 4</span>
+                <span>icon 5</span>
+                <span>icon 6</span>
+                <span>icon 7</span>
+            </div>
+            <p className="text-2xl text-wrap text-center mb-20">Lorem ipsum dolor sit amet, consectetur adipiscing<br/> elit. Fusce mi neque, finibus quis luctus sed, </p>
+            <span className="mb-5 text-2xl">Se torne um parceiro!</span>
+            <button className="bg-black p-3 rounded-3xl text-white">
+                QUERO CONHECER!
+            </button>
         </section>
     </>
  )   
