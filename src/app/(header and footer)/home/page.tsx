@@ -47,15 +47,19 @@ export default function Home(){
             </div>
             <div className="w-[40%] h-[500px] relative">
             <Image
-                src="/images/image.png" // Verifique o caminho
+                src="/images/image.png"
                 alt="Imagem"
-                layout="fill"
-                objectFit="cover"
-                priority // Opcional: carrega a imagem mais rápido
+                fill
+                style={{objectFit:"cover"}}
+                priority
             />
             </div>
         </article>
-        <div>{/* Conteúdo adicional, se necessário */}</div>
+        <div className="flex items-center justify-center gap-10 w-full">
+            <span>icon1</span>
+            <span>icon2</span>
+            <span>icon3</span>
+        </div>
     </section>
         <section className="h-[60dvh] w-full bg-amber-400 flex items-center justify-center flex-row mt-10 mb-10 gap-20">
             <div className="text-center w-1/4 text-3xl rounded-t-full rounded-br-full bg-amber-200 h-3/4 flex items-center justify-center">Frase motivadora</div>
@@ -95,7 +99,7 @@ export default function Home(){
                 <Carroussel cards={cards}/>
             </div>
         </section>
-        <section className="p-10 w-full flex items-center justify-center flex-col gap-20 p-20 box-border">
+        <section className="w-full flex items-center justify-center flex-col gap-20 p-20 box-border">
             <div className="text-center w-full p-10 text-6xl">
                 Nossas conquistas
             </div>
@@ -107,7 +111,7 @@ export default function Home(){
             </article>
             </div>
         </section>
-        <section className="p-10 w-full flex items-center justify-center flex-col p-20 box-border">
+        <section className="w-full flex items-center justify-center flex-col p-20 box-border">
             <div className="w-full p-10 flex items-center justify-center flex-col mb-20">
                 <h2 className="text-6xl text-center">Empresas parceiras</h2>
                 <h3 className="text-1xl text-center text-gray-400">Lorem ipsum dolor sit amet, consectetur</h3>
