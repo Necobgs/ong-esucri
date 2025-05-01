@@ -1,5 +1,40 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('/fonts/Sour gummy/SourGummy-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/Nunito Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype');
+}
+
+.ff-NunitoSans{
+  font-family: 'Nunito Sans';
+  font-weight:normal;
+  font-style: normal;
+}
+
+.ff-NunitoSans-bold{
+  font-family: 'Nunito Sans';
+  font-weight:bold;
+  font-style: normal;
+}
+
+.ff-SourGummy{
+  font-family: 'Sour Gummy';
+  font-weight:normal;
+  font-style: normal;
+}
+
+.ff-SourGummy-bold{
+  font-family: 'Sour Gummy';
+  font-weight:bold;
+  font-style: normal;
+}
+
+
 .card-carrossel-animated {
   transform: scale(0.6) translateX(0%);
   filter: brightness(0.6) blur(2px);

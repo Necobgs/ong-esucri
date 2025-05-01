@@ -26,10 +26,10 @@ export default function Home(){
        <section className="min-h-[100dvh] w-full flex flex-col justify-around pt-[5%] pl-[10%] pr-[10%]">
         <article className="flex justify-around items-center gap-[10%] w-full h-[80vh]">
             <div className="w-[50%] flex gap-[50px] flex-col">
-            <h1 className="font-bold text-[64px] text-amber-400">
+            <h1 className="font-bold text-[64px] text-amber-400 ff-SourGummy">
                 Lorem ipsum dolor sit amet, consectetur
             </h1>
-            <p className="font-medium text-[16px]">
+            <p className="font-medium text-[16px] ff-NunitoSans">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi
                 neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec
                 est vitae pellentesque. Suspendisse potenti. Aliquam massa libero,
