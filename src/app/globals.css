@@ -738,3 +738,35 @@ span.flatpickr-weekday,
   opacity: 0.8;
   cursor: grabbing; /* Changes the cursor to indicate dragging */
 }
+
+.card-carrossel-animated {
+  transform: scale(0.6) translateX(0%);
+  filter: brightness(0.6) blur(2px);
+  opacity: 0; /* Ajustado de 0% para 0 (valores de opacity são entre 0 e 1) */
+  z-index: 0; /* Menor prioridade de empilhamento */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-right {
+  transform: scale(0.8) translateX(60%);
+  filter: brightness(0.8) blur(1px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 1; /* Prioridade intermediária */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-activated {
+  transform: scale(1) translateX(0%);
+  filter: brightness(1) blur(0px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 2; /* Maior prioridade para o card ativo */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-left {
+  transform: scale(0.8) translateX(-60%);
+  filter: brightness(0.8) blur(1px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 1; /* Prioridade intermediária */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}

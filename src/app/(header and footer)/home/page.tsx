@@ -5,14 +5,19 @@ import Carroussel from "@/components/carrossel/Carroussel";
 export default function Home(){
     let cards = [
         {
-            userImage:'userImg',
-            title:'title 1',
-            comment:'comment'
+            userImage:'img user',
+            title:'11111111111',
+            comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.'
         },
         {
-            userImage:'userImg2',
-            title:'title 2',
-            comment:'comment 2'
+            userImage:'img user',
+            title:'222222222222',
+            comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.'
+        },
+        {
+            userImage:'img user',
+            title:'3333333333',
+            comment:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.'
         }
     ]
  
@@ -82,8 +87,25 @@ export default function Home(){
                 <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
             </article>
         </section>   
-        <section>
-        <Carroussel cards={cards}/>
+        <section className="p-10">
+            <div className="text-center w-full p-10 text-5xl">
+                Relatos
+            </div>
+            <div className="h-160">
+                <Carroussel cards={cards}/>
+            </div>
+        </section>
+        <section className="p-10 w-full flex items-center justify-center flex-col gap-20 p-20 box-border">
+            <div className="text-center w-full p-10 text-5xl">
+                Nossas conquistas
+            </div>
+            <div className="h-160">
+            <article className="flex flex-wrap justify-center gap-x-30 gap-y-20"> 
+                <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
+                <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
+                <CourseCard icon="icon de exemplo" title="Lorem Ipsum dolor Sit" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."></CourseCard>
+            </article>
+            </div>
         </section>
     </>
  )   
