@@ -66,3 +66,45 @@
   z-index: 1; /* Prioridade intermediária */
   transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
 }
+
+
+/* Animação para aparecer da esquerda para a direita */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Animação para aparecer da direita para a esquerda */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Classe auxiliar para garantir que o elemento comece invisível */
+.invisible {
+  opacity: 0;
+}
