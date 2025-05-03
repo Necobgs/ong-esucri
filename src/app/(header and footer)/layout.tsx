@@ -12,7 +12,7 @@ export default function RootLayoutPage({
                 {/* <img src="" alt="" /> */}
                 logotipo
             </div>
-            <ul className="flex flex-row gap-10 flex items-center justify-center">
+            <ul className="flex flex-row gap-10 items-center justify-center">
                 <li>Página inicial</li>
                 <li>Cursos</li>
                 <li>Parcerias</li>
@@ -26,7 +26,7 @@ export default function RootLayoutPage({
           <main className="min-h-[90dvh] bg-[#F2F2F2]">
             {children}
           </main>
-          <footer className="h-[10dvh] w-full bg-[#F2F2F2] bg-sky-200 p-5">footer</footer>
+          <footer className="h-[10dvh] w-full bg-[#F2F2F2]  p-5">footer</footer>
       </body>
     </html>
   );
