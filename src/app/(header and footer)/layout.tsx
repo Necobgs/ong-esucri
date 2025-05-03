@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function RootLayoutPage({
   children,
@@ -13,11 +14,11 @@ export default function RootLayoutPage({
                 logotipo
             </div>
             <ul className="flex flex-row gap-10 items-center justify-center">
-                <li>Página inicial</li>
+                <li><Link href="/home">Página inicial</Link></li>
                 <li>Cursos</li>
                 <li>Parcerias</li>
                 <li>Voluntariado</li>
-                <li>Sobre nós</li>
+                <li><Link href="/sobre-nos">Sobre nós</Link></li>
             </ul>
             <div className="flex items-center justify-center">
                 <button>Faça uma doação</button>
