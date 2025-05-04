@@ -1,8 +1,22 @@
-import Link from "next/link"
+"use client"
+
 import TextImage from "@/components/text-image/TextImage"
 import Image from "next/image"
+import React from "react";
 
 export default function SobreNos(){
+    
+    function scrollTo(e:React.MouseEvent<HTMLLIElement>,id:string){
+        e.preventDefault(); // Evita o comportamento padrão
+        const targetElement = document.getElementById(id);
+        if(!targetElement) return;
+        // Scroll suave até o topo do elemento
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start' // Alinha o topo do elemento com o topo da janela
+        });
+    }
+    
     return (
         <>
             <section className="flex items-center justify-center flex-col p-25 bg-gray-200">
@@ -11,13 +25,48 @@ export default function SobreNos(){
             </section>
             <section className="pl-80 pr-80 pt-80 pb-30">
                 <ul className="w-full flex items-start justify-between">
-                    <li><Link href="#nossasHistorias">Nossa história</Link></li>
-                    <li><Link href="nossosObjetivos">Nossos objetivos</Link></li>
-                    <li><Link href="#convenios">Convênios</Link></li>
-                    <li><Link href="#voluntarios">Voluntários</Link></li>
-                    <li><Link href="#diretoria">Diretoria</Link></li>
-                    <li><Link href="#grupoDeMaes">Grupo de mães</Link></li>
-                    <li><Link href="#parceiros">Parceiros</Link></li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'nossasHistorias')}
+                >
+                    <a>Nossa história</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'nossosObjetivos')}
+                >
+                    <a>Nossos objetivos</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'convenios')}
+                >
+                    <a>Convênios</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'voluntarios')}
+                >
+                    <a>Voluntários</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'diretoria')}
+                >
+                    <a>Diretoria</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'grupoDeMaes')}
+                >
+                    <a>Grupo de mães</a>
+                </li>
+                <li
+                    className="cursor-pointer"
+                    onClick={(e) => scrollTo(e, 'parceiros')}
+                >
+                    <a>Parceiros</a>
+                </li>
                 </ul>
             </section>
             <section className="flex flex-col pl-80 pr-80 gap-15" id="nossasHistorias">
