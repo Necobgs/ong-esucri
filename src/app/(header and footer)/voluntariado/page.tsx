@@ -1,8 +1,11 @@
 "use client"
 
 import Image from "next/image"
+import { Swiper, SwiperSlide } from "swiper/react";
 import SlideProfession from "@/components/slide-profession/slide-profession"
-import { useState } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 
 export default function Voluntariado(){
 
@@ -42,20 +45,6 @@ export default function Voluntariado(){
         }
     ]
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex < slideProfessions.length - 1 ? prevIndex + 1 : 0
-        );
-      };
-    
-      const handlePrev = () => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex > 0 ? prevIndex - 1 : slideProfessions.length - 1
-        );
-      };
-
     return (
         <>
             <section className="flex flex-col pl-40 pr-40 pt-40 gap-15 pb-10">
@@ -90,34 +79,21 @@ export default function Voluntariado(){
                     img
                 </div>
             </section>
-            <section className="px-4 sm:px-10 lg:px-40 pt-20 relative">
-                <div className="overflow-hidden">
-                <div
-                    className="flex flex-nowrap transition-transform duration-500"
-                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                >
-                    {slideProfessions.map((slide, index) => (
-                    <div key={index} className="flex-shrink-0 w-full">
+            <section className="px-4 sm:px-10 lg:px-22 pt-20">
+            <Swiper
+                modules={[Navigation]}
+                spaceBetween={0}
+                slidesPerView={1}
+                navigation
+                loop={true}
+            >
+                {slideProfessions.map((slide, index) => (
+                    <SwiperSlide key={index}>
                         <SlideProfession {...slide} />
-                    </div>
-                    ))}
-                </div>
-                </div>
-                <button
-                onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full"
-                aria-label="Slide anterior"
-                >
-                &larr;
-                </button>
-                <button
-                onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-3 rounded-full"
-                aria-label="Próximo slide"
-                >
-                &rarr;
-                </button>
-            </section>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </section>
         </>
     )
 }
