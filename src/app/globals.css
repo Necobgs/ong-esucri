@@ -120,3 +120,9 @@ p{
 .invisible {
   opacity: 0;
 }
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: black !important; /* Vermelho */
+}
