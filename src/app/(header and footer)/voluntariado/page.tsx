@@ -6,6 +6,8 @@ import SlideProfession from "@/components/slide-profession/slide-profession"
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import CardVolunteeringResult from "@/components/card-volunteering-result/card-volunteering-result";
+
 
 export default function Voluntariado(){
 
@@ -93,6 +95,47 @@ export default function Voluntariado(){
                     </SwiperSlide>
                 ))}
             </Swiper>
+        </section>
+        <section className="pl-40 pr-40 pt-30 flex items-center flex-col justify-center gap-10">
+            <h2 className="text-center ff-SourGummy-bold text-5xl">Resultados do Voluntariado</h2>
+            <div className="grid grid-cols-3 gap-5">
+            <CardVolunteeringResult
+                image="/images/image.png"
+                title="Evento 1"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti."
+                direction="col"
+            />
+            <CardVolunteeringResult
+                image="/images/image.png"
+                title="Evento 2"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti."
+                direction="col"
+            />
+            <CardVolunteeringResult
+                image="/images/image.png"
+                title="Evento 3"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti."
+                direction="col"
+            />
+            <CardVolunteeringResult
+                image="/images/image.png"
+                title="Evento 4"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti."
+                direction="row"
+            />
+            </div>
+        </section>
+        <section className="flex flex-col pl-80 pr-80 gap-15 pt-50 pb-30 justify-center items-center">
+            <div className="w-1/4 items-center justify-center text-center">
+                Image
+            </div>            
+            <div className="flex flex-col justify-center items-center gap-10 w-3/4">
+                <span className="ff-SourGummy-bold text-5xl text-center">Lorem ipsum dolor sit amet, consectetur</span>
+                <p className="ff-NunitoSans text-1xl text-center w-2/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.</p>
+            </div>
+            <button className="bg-black text-white pl-5 pr-5 pt-3 pb-3 rounded-3xl ff-SourGummy-bold">
+            QUERO FAZER PARTE
+            </button>
         </section>
         </>
     )
