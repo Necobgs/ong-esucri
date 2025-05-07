@@ -10,6 +10,18 @@
   src: url('/fonts/Nunito Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype');
 }
 
+.titulo-padrao {
+  font-size: 64px; /* text-3xl */
+  font-weight: 700;     /* font-bold */
+  text-align: center;   /* text-center */
+  color: #10151C;       /* text-zinc-800 */
+}
+
+p{
+  font-family: 'Nunito Sans';
+  font-weight: normal;
+}
+
 .ff-NunitoSans{
   font-family: 'Nunito Sans';
   font-weight:normal;

@@ -8,7 +8,7 @@ export default function RootLayoutPage({
   return (
     <html lang="pt-br">
       <body>
-          <header className="h-[10dvh] w-full bg-sky-200 flex flex-row justify-between align-center p-5">
+          <header className="h-[10dvh] w-full bg-[#F2F2F2] flex flex-row justify-between align-center p-5 ff-NunitoSans-Medium">
             <div className="flex items-center justify-center">
                 {/* <img src="" alt="" /> */}
                 logotipo
