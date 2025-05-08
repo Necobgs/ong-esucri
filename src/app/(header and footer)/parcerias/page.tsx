@@ -11,7 +11,17 @@ export default function parcerias(){
         <>
             <section className="min-h-[100dvh] w-full flex flex-col pt-[3%]">
                 <article>
-                    <HeroSection></HeroSection>
+                    <HeroSection
+                        iconeSrc="/icons/vetor-parcerias.svg"
+                        titulo="Juntos, transformamos vidas"
+                        descricao="O Instituto de Educação Especial Diomício Freitas conta com o 
+                        apoio de empresas, instituições e voluntários que acreditam na 
+                        inclusão social e na valorização da diversidade. Cada parceria 
+                        fortalece nossa missão de preparar e qualificar jovens e adultos 
+                        com deficiência intelectual para o mercado de trabalho e para o 
+                        exercício pleno da cidadania."
+                        botaoTexto="TORNAR-SE UM PARCEIRO"
+                    />
                     <LinhaIcones></LinhaIcones>
 
                     <h2 className="font-bold text-[48px] sm:text-[64px] text-[#10151C] ff-SourGummy-bold mb-5 sm:leading-15 leading-12 px-10 flex justify-center mt-20">

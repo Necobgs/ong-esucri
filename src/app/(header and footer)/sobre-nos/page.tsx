@@ -19,11 +19,11 @@ export default function SobreNos(){
     
     return (
         <>
-            <section className="flex items-center justify-center flex-col p-25 bg-gray-200">
-                <h1 className="ff-SourGummy-bold text-center text-6xl mb-10">Lorem ipsum dolor sit amet,<br/>consectetur</h1>
-                <p className="ff-NunitoSans text-center w-1/2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.</p>
+            <section className="flex items-center justify-center flex-col p-35 bg-gray-200">
+                <h1 className="ff-SourGummy-bold text-center text-6xl mb-10">Instituto Diomício Freitas: <br/>Transformando Vidas com Educação e Inclusão</h1>
+                <p className="ff-NunitoSans text-center w-1/2">Há mais de 35 anos, o Instituto Diomício Freitas promove a inclusão e o desenvolvimento de jovens e adultos com deficiência intelectual. Com foco na valorização das diferenças, a instituição oferece educação de qualidade e oportunidades para que cada aluno conquiste sua autonomia, exerça sua cidadania e seja protagonista de sua história. Aqui, cada passo dado é um avanço rumo a um futuro mais justo e igualitário para todos.  </p>
             </section>
-            <section className="pl-80 pr-80 pt-80 pb-30">
+            <section className="pl-80 pr-80 pt-40 pb-30">
                 <ul className="w-full flex items-start justify-between">
                 <li
                     className="cursor-pointer"
@@ -69,8 +69,8 @@ export default function SobreNos(){
                 </li>
                 </ul>
             </section>
-            <section className="flex flex-col pl-80 pr-80 gap-15" id="nossasHistorias">
-                <TextImage image="image1" title="Nossas histórias" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu." direction="default"/>
+            <section className="flex flex-col pl-80 pr-80 gap-8" id="nossasHistorias">
+                <TextImage image="image1" title="Nossa história" text="Desde 1985, o Instituto de Educação Especial Diomício Freitas atua como uma ponte entre o cuidado, a formação e a inclusão social de jovens e adultos com deficiência intelectual e Transtorno do Espectro Autista (TEA). Localizado em Criciúma-SC, é uma instituição filantrópica, sem fins lucrativos, vinculada à Associação Pestalozzi." direction="default"/>
                 <Image
                     src="/images/image.png"
                     alt="Imagem"
@@ -80,15 +80,21 @@ export default function SobreNos(){
                     style={{objectFit:"cover"}}
                     priority
                 />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero.</p>
+                <p>A instituição iniciou suas atividades em uma residência cedida pelo Sr. João Zanette. Em 1992, foi adquirida a sede atual, localizada na Rua Lucia Milioli, 211, no bairro Santa Bárbara, em Criciúma-SC.</p>
+                <p>Desde então, o Instituto tem se consolidado como referência na qualificação e inclusão de pessoas com deficiência intelectual no mercado de trabalho, oportunizando o exercício da cidadania e a valorização das diferenças.</p>
+                <p>Mais de 500 educandos já passaram pela instituição, que hoje tem capacidade para atender até 120 alunos, a partir de 14 anos, vindos de Criciúma e municípios vizinhos. As atividades desenvolvidas vão desde oficinas de artesanato, informática e embalador de supermercado até conteúdos acadêmicos e orientação profissional.</p>
+                <p>Nosso trabalho é fundamentado no princípio da diversidade, buscando garantir o direito à educação e o desenvolvimento do potencial de cada aluno. Valorizamos a autonomia, a responsabilidade e a inclusão social como pilares da formação de um cidadão consciente e participativo.</p>
             </section>
             <section className="flex flex-col pl-80 pr-80 gap-15 pt-30" id="nossosObjetivos">
-                <TextImage image="image2" title="Nossos objetivos" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu." direction="reverse"/>
+                <TextImage image="image2" title="Nossos objetivos" text="Nosso principal objetivo é promover o desenvolvimento de habilidades e competências que possibilitem a autonomia, a inserção social e a inclusão no mercado de trabalho. Valorizamos as diferenças, respeitamos a diversidade e acreditamos no potencial de cada indivíduo." direction="reverse"/>
             </section>
             <section className="flex flex-col pl-80 pr-80 gap-15 pt-30" id="convenios">
-                <TextImage direction="default" image="image2" title="Convênios" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."/>
+                <TextImage direction="default" image="image2" title="Convênios" text="Mantemos parcerias nas esferas municipal, estadual e federal para garantir a continuidade dos projetos:
+                                                                                        Fundação Catarinense de Educação Especial (FCEE)
+                                                                                        Fundo Nacional de Assistência Social
+                                                                                        Prefeitura de Criciúma e Morro da Fumaça
+                                                                                        AFASC
+                                                                                        União Catarinense de Educação (UCE)"/>
             </section>
             <section className="flex flex-col pl-80 pr-80 gap-15 pt-30" id="voluntarios">
                 <TextImage direction="reverse" image="image2" title="Voluntários" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."/>
