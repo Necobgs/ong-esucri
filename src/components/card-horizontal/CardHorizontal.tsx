@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "../Button/Button";
 
 type CardHorizontalProps = {
   titulo: string;
@@ -21,9 +22,9 @@ export default function CardHorizontal({
             {titulo}
           </h3>
           <p className="text-zinc-800 mb-6 ff-NunitoSans-Medium">{descricao}</p>
-          <button className="bg-zinc-900 text-white px-6 py-3 rounded-full font-bold ff-SourGummy-bold">
+          <Button>
             {textoBotao}
-          </button>
+          </Button>
         </div>
 
         <div className="flex items-center justify-end">

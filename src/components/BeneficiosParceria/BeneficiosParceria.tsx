@@ -15,14 +15,12 @@ export default function BeneficiosParceria({ beneficios }: BeneficiosParceriaPro
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-[32px] md:text-[40px] font-bold text-zinc-900 ff-SourGummy-bold mb-6 sm:leading-12 leading-9">
-            O que significa ser um parceiro do Instituto?
+            O que significa ser nosso parceiro?
           </h2>
           <p className="text-zinc-800">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi
-            neque, finibus quis luctus sed, scelerisque id ante. In sagittis
-            nec est vitae pellentesque. Suspendisse potenti. Aliquam massa
-            libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras
-            sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.
+          Ser nosso parceiro é fazer parte de uma trajetória dedicada à inclusão e 
+          ao desenvolvimento de jovens com deficiência intelectual. 
+          Com o seu apoio, conseguimos:
           </p>
         </div>
 

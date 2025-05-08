@@ -13,16 +13,21 @@ export default function parcerias(){
                 <article>
                     <HeroSection></HeroSection>
                     <LinhaIcones></LinhaIcones>
+
+                    <h2 className="font-bold text-[48px] sm:text-[64px] text-[#10151C] ff-SourGummy-bold mb-5 sm:leading-15 leading-12 px-10 flex justify-center mt-20">
+                        Parceiros que nos impulsionam!
+                    </h2>
                     <ParceirosGrid></ParceirosGrid>
 
                     <section className="mb-20">
-                        <Titulo>Por que o Instituto precisa de parceiros?</Titulo>
+                        <Titulo className="mb-4 px-[30%]">Por que precisamos de parceiros?</Titulo>
                         <p className="max-w-xl mx-auto text-gray-700 mb-6 text-center">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, 
-                        finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae 
-                        pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis
-                        aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc 
-                        lobortis, dapibus arcu.
+                        Somos uma instituição filantrópica que depende da colaboração de empresas, 
+                        instituições e pessoas da comunidade para seguir com a nossa missão. Não somos 
+                        autossustentáveis, e é por meio do apoio de nossos parceiros que conseguimos 
+                        transformar vidas através da educação inclusiva, do desenvolvimento de habilidades 
+                        e da preparação para o mercado de trabalho de jovens e adultos com deficiência 
+                        intelectual e Transtorno do Espectro Autista (TEA).
                         </p>
                     </section>
 
@@ -31,22 +36,20 @@ export default function parcerias(){
                         <div className="grid gap-10">
                             <CardHorizontal
                             titulo="Doações Corporativas"
-                            descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi 
-                            neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est 
-                            vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper 
-                            quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc 
-                            lobortis, dapibus arcu."
+                            descricao="Sua empresa pode nos ajudar a continuar nosso trabalho! Contribuições 
+                            financeiras, sejam regulares ou pontuais, garantem a manutenção de nossas 
+                            oficinas, programas pedagógicos e ações de inclusão social. Cada doação se 
+                            transforma em oportunidade real para nossos educandos."
                             textoBotao="FAZER UMA DOAÇÃO CORPORATIVA"
-                            imagem="/doacao.jpg"
+                            imagem="/image.jpg"
                             />
 
                             <CardHorizontal
                             titulo="Vagas para alunos"
-                            descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi 
-                            neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est 
-                            vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper 
-                            quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc 
-                            lobortis, dapibus arcu."
+                            descricao="Você pode abrir as portas da sua empresa para nossos alunos! Ao oferecer 
+                            oportunidades de estágio ou trabalho, você contribui diretamente com a autonomia, 
+                            dignidade e inclusão de pessoas com deficiência intelectual. Juntos, podemos construir 
+                            um mercado de trabalho mais justo e diverso."
                             textoBotao="TENHO VAGAS EM MINHA EMPRESA!"
                             imagem="/vagas.jpg"
                             />
@@ -75,11 +78,11 @@ export default function parcerias(){
                 
                     <Cta
                     titulo="Como se tornar um parceiro?"
-                    descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis 
-                    nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, 
-                    ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, 
-                    iaculis nunc lobortis, dapibus arcu."
+                    descricao="Acredita que sua empresa pode transformar vidas? Torne-se nossa parceira!
+                    Você pode contribuir com doações mensais, apoio a projetos, contratação de nossos alunos 
+                    ou fornecimento de materiais. Ao nosso lado, sua marca promove inclusão, 
+                    cidadania e desenvolvimento humano.
+                    Entre em contato e venha fazer parte dessa rede de solidariedade e impacto social."
                     ctaTitulo="Vamos apertar as mãos!"
                     >
                     </Cta>

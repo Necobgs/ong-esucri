@@ -17,6 +17,18 @@
   color: #10151C;       /* text-zinc-800 */
 }
 
+.card-texto {
+  padding: 5%;
+  background-color: rgba(230, 230, 230, 0.733);
+  border-radius: 2%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+  
+.card-texto:hover {
+  transform: translateY(-10px) scale(1.05);
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
 p{
   font-family: 'Nunito Sans';
   font-weight: normal;
