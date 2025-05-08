@@ -17,8 +17,8 @@ export default function RootLayoutPage({
             </div>
             <ul className="flex flex-row gap-10 items-center justify-center">
                 <li><Link href="/home">Página inicial</Link></li>
-                <li>Cursos</li>
-                <li>Parcerias</li>
+                <li><Link href="/cursos">Cursos</Link></li>
+                <li><Link href="/parcerias">Parcerias</Link></li>
                 <li><Link href="/voluntariado">Voluntariado</Link></li>
                 <li><Link href="/sobre-nos">Sobre nós</Link></li>
             </ul>

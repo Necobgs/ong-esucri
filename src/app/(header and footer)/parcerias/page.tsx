@@ -41,7 +41,7 @@ export default function parcerias(){
                             oficinas, programas pedagógicos e ações de inclusão social. Cada doação se 
                             transforma em oportunidade real para nossos educandos."
                             textoBotao="FAZER UMA DOAÇÃO CORPORATIVA"
-                            imagem="/image.jpg"
+                            imagem="image.jpg"
                             />
 
                             <CardHorizontal
@@ -51,7 +51,7 @@ export default function parcerias(){
                             dignidade e inclusão de pessoas com deficiência intelectual. Juntos, podemos construir 
                             um mercado de trabalho mais justo e diverso."
                             textoBotao="TENHO VAGAS EM MINHA EMPRESA!"
-                            imagem="/vagas.jpg"
+                            imagem="vagas.jpg"
                             />
                         </div>
                     </section>
@@ -84,6 +84,7 @@ export default function parcerias(){
                     cidadania e desenvolvimento humano.
                     Entre em contato e venha fazer parte dessa rede de solidariedade e impacto social."
                     ctaTitulo="Vamos apertar as mãos!"
+                    buttonText="QUERO AJUDAR!"
                     >
                     </Cta>
                 </article>

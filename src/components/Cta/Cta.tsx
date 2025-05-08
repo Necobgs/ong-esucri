@@ -1,15 +1,17 @@
 import Button from "../Button/Button";
 
-type CtaProps = {
+interface CtaProps{
     titulo:string;
     descricao: string;
     ctaTitulo:string;
+    buttonText:string;
 }
 
 export default function Cta({
     titulo,
     descricao,
     ctaTitulo,
+    buttonText
 }:CtaProps){
     return(
         <section className="bg-[#CBCBCB] px-4 md:px-0 py-26">
@@ -27,7 +29,7 @@ export default function Cta({
                     <h2 className="text-[32px] md:text-[64px] font-bold text-zinc-900 ff-SourGummy-bold mb-6 sm:leading-15 leading-12">
                         {ctaTitulo}
                     </h2>
-                    <Button>QUERO AJUDAR!</Button>
+                    <Button>{buttonText}</Button>
                 </div>
             </div>
         </section>
