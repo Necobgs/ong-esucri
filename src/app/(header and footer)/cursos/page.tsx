@@ -1,0 +1,21 @@
+import InitalBanner from "@/components/initial-banner/initial-banner"
+import Titulo from "@/components/Titulo/Titulo"
+import CardOurPrograms from "@/components/card-our-programs/card-our-programs"
+import Cta from "@/components/Cta/Cta";
+
+export default function(){
+    return (
+        <>
+                <InitalBanner image="/images/image.png" textSecondButton="QUERO FAZER UMA DOAÇÃO" textFirstButton="QUERO ME VOLUNTARIAR" title="Transformando Vidas com Educação, Inclusão e Amor" description="Desde 1985, o Instituto de Educação Especial Diomício Freitas promove o desenvolvimento de jovens e adultos com deficiência intelectual e TEA, preparando-os para o mercado de trabalho e para o exercício da cidadania por meio da educação, do acolhimento e da inclusão."/>
+                <Titulo as="h2" className="left-auto right-auto pt-5 pb-5">Nossos Programas</Titulo>
+                <section className="p-50 flex flex-col gap-20">
+                    <CardOurPrograms listItems={['item1','item2','item3']} title="Grupo de Iniciação" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"/>
+                    <CardOurPrograms listItems={['item1','item2','item3']} title="Grupo de Pré-qualificação" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"/>
+                    <CardOurPrograms listItems={['item1','item2','item3']} title="Sevil - Serviços de Vivências Laboriais" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"/>
+                    <CardOurPrograms listItems={['item1','item2','item3']} title="Locomoção Independente" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"/>
+                    <CardOurPrograms listItems={['item1','item2','item3']} title="Educação Física" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"/>
+                </section>
+                <Cta titulo="Como se tornar um aluno?" descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu." ctaTitulo="Quero inscrever!" buttonText="quero conhecer!"></Cta>
+        </>
+    )
+}

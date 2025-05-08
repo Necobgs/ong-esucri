@@ -1,10 +1,10 @@
-import Image from "next/image";
 import CourseCard from "@/components/course-card/course-card";
 import Carroussel from "@/components/carrossel/Carroussel";
-import LinhaIcones from "@/components/LinhaIcones/LinhaIcones";
 import Button from "@/components/Button/Button";
 import Titulo from "@/components/Titulo/Titulo";
 import ParceirosGrid from "@/components/ParceirosGrid/ParceirosGrid";
+import InitalBanner from "@/components/initial-banner/initial-banner";
+
 
 export default function Home(){
     let cards = [
@@ -27,38 +27,8 @@ export default function Home(){
  
     return (
     <>
-    <section className="min-h-[100dvh] w-full flex flex-col pl-[10%] pr-[10%]">
-        <article className="flex justify-around items-center gap-[10%] w-full h-[80vh]">
-            <div className="w-[50%] flex gap-[25px] flex-col">
-                <Titulo as="h1" className="text-amber-500 text-left">
-                    Transformando Vidas com Educação, Inclusão e Amor
-                </Titulo>
-                <p className="font-medium text-[16px] ff-NunitoSans">
-                Desde 1985, o Instituto de Educação Especial Diomício Freitas promove 
-                o desenvolvimento de jovens e adultos com deficiência intelectual e TEA, 
-                preparando-os para o mercado de trabalho e para o exercício da cidadania 
-                por meio da educação, do acolhimento e da inclusão.
-                </p>
-                <div className="flex justify-start items-center gap-6 text-white">
-                    <Button className="bg-[#866AFF]">QUERO ME VOLUNTARIAR</Button>
-                    <Button className="bg-[#866AFF]">QUERO FAZER UMA DOAÇÃO</Button>
-                </div>
-            </div>
-
-            <div className="w-[40%] h-[420px] relative rounded-lg overflow-hidden">
-                <Image
-                    src="/images/home/fotoHead.jpeg"
-                    alt="Imagem"
-                    fill
-                    style={{objectFit:"cover"}}
-                    priority
-                />
-            </div>
-
-        </article>
-        <LinhaIcones></LinhaIcones>
-    </section>
-
+        
+        <InitalBanner image="/images/home/fotoHead.jpeg" textSecondButton="QUERO FAZER UMA DOAÇÃO" textFirstButton="QUERO ME VOLUNTARIAR" title="Transformando Vidas com Educação, Inclusão e Amor" description="Desde 1985, o Instituto de Educação Especial Diomício Freitas promove o desenvolvimento de jovens e adultos com deficiência intelectual e TEA, preparando-os para o mercado de trabalho e para o exercício da cidadania por meio da educação, do acolhimento e da inclusão."/>
         <section className="h-[60dvh] w-full bg-amber-400 flex items-center justify-center flex-row mt-10 mb-10 gap-20">
             <div className="pl-8 text-start w-1/4 text-5xl rounded-t-full rounded-br-full bg-amber-200 h-3/4 flex items-center justify-center ff-SourGummy-bold">Incluir é amar com atitude.</div>
             <div className="w-4/8">
