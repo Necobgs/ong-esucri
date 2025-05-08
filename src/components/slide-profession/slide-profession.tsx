@@ -21,7 +21,7 @@ export default function SlideProfession(props:ProfessionInterface){
                         {
                             props.details.map((detail,index)=>{
                                 return (
-                                <div key={index} className="flex items-center justify-center gap-5">
+                                <div key={index} className="flex items-start justify-center gap-5">
                                     <span>{detail.icon}</span>
                                     <div>
                                         <h3 className="ff-SourGummy-bold text-1xl">{detail.title}</h3>

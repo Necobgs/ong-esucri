@@ -1,5 +1,6 @@
 "use client"
 
+import HeroSection from "@/components/hero-section/hero-section";
 import TextImage from "@/components/text-image/TextImage"
 import Image from "next/image"
 import React from "react";
@@ -97,7 +98,7 @@ export default function SobreNos(){
                                                                                         União Catarinense de Educação (UCE)"/>
             </section>
             <section className="flex flex-col pl-80 pr-80 gap-15 pt-30" id="voluntarios">
-                <TextImage direction="reverse" image="image2" title="Voluntários" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu."/>
+                <TextImage direction="reverse" image="image2" title="Voluntários" text="O trabalho voluntário é essencial para o Instituto. Contamos com apoio em áreas administrativas, pedagógicas, reciclagem e projetos criativos. Voluntários da comunidade, acadêmicos da UNESC e o Grupo de Mães ajudam a manter viva a missão da instituição."/>
                 <Image
                     src="/images/image.png"
                     alt="Imagem"
@@ -109,18 +110,17 @@ export default function SobreNos(){
                 />
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu. Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero.</p>
             </section>
-            <section className="flex flex-col pl-80 pr-80 gap-15 pt-50 pb-30 justify-center items-center">
-                <div className="w-1/4 items-center justify-center text-center">
-                    Image
-                </div>            
-                <div className="flex flex-col justify-center items-center gap-10 w-3/4">
-                    <span className="ff-SourGummy-bold text-5xl text-center">Lorem ipsum dolor sit amet, consectetur</span>
-                    <p className="ff-NunitoSans text-1xl text-center w-2/4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed, scelerisque id ante. In sagittis nec est vitae pellentesque. Suspendisse potenti. Aliquam massa libero, ullamcorper quis aliquam dignissim, tempus a massa. Cras sed sapien rhoncus, iaculis nunc lobortis, dapibus arcu.</p>
-                </div>
-                <button className="bg-black text-white pl-5 pr-5 pt-3 pb-3 rounded-3xl ff-SourGummy-bold">
-                QUERO FAZER PARTE
-                </button>
-            </section>
+            
+            <section className="mb-10"><HeroSection
+                iconeSrc="/icons/vetor-parcerias.svg"
+                titulo="Junte-se a nós nessa história!"
+                descricao="Você pode fazer a diferença na vida de dezenas de jovens e adultos com 
+                deficiência intelectual. Seja doando seu tempo, suas habilidades ou apenas sua 
+                presença. Venha conhecer o Instituto e descubra como seu apoio pode transformar 
+                histórias.
+                Entre em contato ou venha nos visitar!"
+                botaoTexto="Quero fazer parte!"
+            /></section>
         </>
     )
 }
