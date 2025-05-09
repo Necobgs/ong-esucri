@@ -43,21 +43,13 @@ export default function Carroussel({ cards }: Props) {
       })}
       <button
         onClick={handlePrev}
-<<<<<<< HEAD
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#FF7E1C] text-white px-4 py-2 rounded"
-=======
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded cursor-pointer hover:bg-gray-900 transition-all"
->>>>>>> 776927c87c9e97e58813be1b0684c4cd1d77ad8b
       >
         Anterior
       </button>
       <button
         onClick={handleNext}
-<<<<<<< HEAD
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#FF7E1C] text-white px-4 py-2 rounded"
-=======
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded cursor-pointer hover:bg-gray-900 transition-all"
->>>>>>> 776927c87c9e97e58813be1b0684c4cd1d77ad8b
       >
         Próximo
       </button>
