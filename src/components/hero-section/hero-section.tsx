@@ -16,7 +16,7 @@ export default function HeroSection({
   className = "",
 }: HeroSectionProps) {
   return (
-    <section className={`flex-col text-center px-4 ${className}`}>
+    <section className={`flex-col text-center px-4 pb-10${className}`}>
       <div className="mb-6">
         <img
           src={iconeSrc}

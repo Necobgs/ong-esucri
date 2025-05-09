@@ -11,7 +11,7 @@ type BeneficiosParceriaProps = {
 
 export default function BeneficiosParceria({ beneficios }: BeneficiosParceriaProps) {
   return (
-    <section className="bg-zinc-200 px-4 py-26">
+    <section className="bg-amber-500 px-4 py-26">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
           <h2 className="text-[32px] md:text-[40px] font-bold text-zinc-900 ff-SourGummy-bold mb-6 sm:leading-12 leading-9">

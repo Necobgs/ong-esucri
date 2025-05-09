@@ -12,7 +12,7 @@ export default function parcerias(){
             <section className="min-h-[100dvh] w-full flex flex-col pt-[3%]">
                 <article>
                     <HeroSection
-                        iconeSrc="/icons/vetor-parcerias.svg"
+                        iconeSrc="/icons/casa.svg"
                         titulo="Juntos, transformamos vidas"
                         descricao="O Instituto de Educação Especial Diomício Freitas conta com o 
                         apoio de empresas, instituições e voluntários que acreditam na 
@@ -24,13 +24,13 @@ export default function parcerias(){
                     />
                     <LinhaIcones></LinhaIcones>
 
-                    <h2 className="font-bold text-[48px] sm:text-[64px] text-[#10151C] ff-SourGummy-bold mb-5 sm:leading-15 leading-12 px-10 flex justify-center mt-20">
+                    <h2 className="font-bold text-[48px] sm:text-[64px] text-[#3a79d1] ff-SourGummy-bold mb-5 sm:leading-15 leading-12 px-10 flex justify-center mt-20">
                         Parceiros que nos impulsionam!
                     </h2>
                     <ParceirosGrid></ParceirosGrid>
 
                     <section className="mb-20">
-                        <Titulo className="mb-4 px-[30%]">Por que precisamos de parceiros?</Titulo>
+                        <Titulo className="mb-4 px-[30%] text-amber-500">Por que precisamos de parceiros?</Titulo>
                         <p className="max-w-xl mx-auto text-gray-700 mb-6 text-center">
                         Somos uma instituição filantrópica que depende da colaboração de empresas, 
                         instituições e pessoas da comunidade para seguir com a nossa missão. Não somos 
@@ -42,7 +42,7 @@ export default function parcerias(){
                     </section>
 
                     <section className="mb-15">
-                        <div className="mb-5"><Titulo>Como você pode nos ajudar:</Titulo></div>
+                        <div className="mb-8"><Titulo>Como você pode nos ajudar:</Titulo></div>
                         <div className="grid gap-10">
                             <CardHorizontal
                             titulo="Doações Corporativas"
@@ -51,7 +51,7 @@ export default function parcerias(){
                             oficinas, programas pedagógicos e ações de inclusão social. Cada doação se 
                             transforma em oportunidade real para nossos educandos."
                             textoBotao="FAZER UMA DOAÇÃO CORPORATIVA"
-                            imagem="image.jpg"
+                            imagem="/images/images.png"
                             />
 
                             <CardHorizontal
@@ -61,7 +61,7 @@ export default function parcerias(){
                             dignidade e inclusão de pessoas com deficiência intelectual. Juntos, podemos construir 
                             um mercado de trabalho mais justo e diverso."
                             textoBotao="TENHO VAGAS EM MINHA EMPRESA!"
-                            imagem="vagas.jpg"
+                            imagem="/images/images.png"
                             />
                         </div>
                     </section>

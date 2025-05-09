@@ -11,7 +11,7 @@ export default function ParceirosGrid() {
   ];
 
   return (
-    <section className="py-12 text-center mb-15 ">
+    <section className="py-12 text-center mb-10 ">
       <div className="grid grid-cols-3 md:grid-cols-6 gap-10 place-items-center px-40">
         {logos.map((src, index) => (
           <Image

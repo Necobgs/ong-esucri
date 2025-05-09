@@ -4,7 +4,7 @@ interface Props{
     text:string;
 }
 
-export default function CourseCard(props:Props){
+export default function CourseCardConquistas(props:Props){
     return (
         <article className="flex flex-col justify-center items-center gap-10 w-1/5">
             <div className="w-20 h-20">   
@@ -15,8 +15,8 @@ export default function CourseCard(props:Props){
                     height={100}
                 />
             </div>
-            <div className="text-center ff-SourGummy-bold text-3xl text-white">{props.title}</div>
-            <div className="text-center ff-NunitoSans text-white">{props.text}</div>
+            <div className="text-center ff-SourGummy-bold text-3xl text-[#866AFF]">{props.title}</div>
+            <div className="text-center ff-NunitoSans">{props.text}</div>
         </article>
     )
 }

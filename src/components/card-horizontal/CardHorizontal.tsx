@@ -8,7 +8,7 @@ type CardHorizontalProps = {
   imagem: string;
 };
 
-export default function CardHorizontal({
+export default function   CardHorizontal({
   titulo,
   descricao,
   textoBotao,
@@ -16,7 +16,7 @@ export default function CardHorizontal({
 }: CardHorizontalProps) {
   return (
     <section className="bg-zinc-100 px-4">
-      <div className="max-w-6xl mx-auto bg-zinc-300 rounded-lg p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto bg-[#9b85ff] rounded-lg p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <h3 className="text-[40px] font-bold text-zinc-900 mb-4 ff-SourGummy-bold">
             {titulo}

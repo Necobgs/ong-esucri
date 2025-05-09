@@ -59,7 +59,6 @@ export default function Voluntariado(){
                     height={200}
                     className="w-full max-h-80 rounded-2xl bg-[#ECECEC]"
                     style={{objectFit:"contain"}}
-                    priority
                 />
                 <div className="w-full flex justify-between items-center">
                     <span>Lorem ipsum </span>
@@ -92,7 +91,6 @@ export default function Voluntariado(){
                     height={100}
                     className="w-full max-h-100 rounded-2xl bg-[#ECECEC]"
                     style={{objectFit:"contain"}}
-                    priority
                 />
                 </div>
             </section>

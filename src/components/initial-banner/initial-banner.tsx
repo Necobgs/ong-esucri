@@ -33,7 +33,6 @@ export default function InitalBanner(props:Props){
                     src={props.image}
                     alt="Imagem"
                     fill
-                    style={{objectFit:"cover"}}
                     priority
                 />
             </div>
