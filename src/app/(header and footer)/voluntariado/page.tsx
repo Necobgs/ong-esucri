@@ -104,7 +104,7 @@ export default function Voluntariado(){
             >
                 {slideProfessions.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <SlideProfession {...slide} />
+                        <SlideProfession {...slide}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
