@@ -138,7 +138,7 @@ export default function Voluntariado(){
             />
             </div>
         </section>
-        <HeroSection
+        <div className="mb-20"><HeroSection
             iconeSrc="/icons/vetor-parcerias.svg"
             titulo="Quero me voluntariar!"
             descricao="Você pode fazer a diferença na vida de dezenas de jovens e adultos com 
@@ -147,9 +147,7 @@ export default function Voluntariado(){
             histórias.
             Entre em contato ou venha nos visitar!"
             botaoTexto="TORNAR-SE UM PARCEIRO"
-        />
-
-        <section className="mb-20"><LinhaIcones></LinhaIcones></section>
+        /></div>
         </>
     )
 }

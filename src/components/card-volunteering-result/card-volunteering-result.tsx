@@ -24,7 +24,7 @@ export default function CardVolunteeringResult(props:Props){
             />
             <div className={`flex flex-col gap-6 ${descriptionWidth[props.direction]}`}>
                 <h3 className="ff-SourGummy-bold text-4xl w-full text-start">{props.title}</h3>
-                <p className="ff-NunitoSans text-2xl">{props.description}</p>
+                <p className="ff-NunitoSans text-1xl">{props.description}</p>
             </div>
         </article>
     )
