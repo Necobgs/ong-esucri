@@ -7,9 +7,10 @@ import { motion } from "framer-motion"
 
 export default function ContatoPage() {
   const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    mensagem: "",
+    name: "",
+    email_contact: "",
+    subject: "",
+    message: "",
   })
 
   const [enviando, setEnviando] = useState(false)
@@ -27,14 +28,14 @@ export default function ContatoPage() {
     setEnviando(true)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       })
 
       if (response.ok) {
-        setForm({ nome: "", email: "", mensagem: "" })
+        setForm({ name: "", email_contact: "", subject: "", message: "" })
         setEnviado(true)
         console.log("Mensagem enviada com sucesso!")
       } else {
@@ -70,8 +71,8 @@ export default function ContatoPage() {
           <label className="text-sm font-semibold ff-NunitoSans">Nome</label>
           <input
             type="text"
-            name="nome"
-            value={form.nome}
+            name="name"
+            value={form.name}
             onChange={handleChange}
             placeholder="Seu nome"
             className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
@@ -81,18 +82,29 @@ export default function ContatoPage() {
           <label className="text-sm font-semibold ff-NunitoSans">Email</label>
           <input
             type="email"
-            name="email"
-            value={form.email}
+            name="email_contact"
+            value={form.email_contact}
             onChange={handleChange}
             placeholder="seu@email.com"
             className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
             required
           />
 
+          <label className="text-sm font-semibold ff-NunitoSans">Assunto</label>
+          <input
+            type="text"
+            name="subject"
+            value={form.subject}
+            onChange={handleChange}
+            placeholder="Ex: Quero ser voluntário"
+            className="border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+            required
+          />
+
           <label className="text-sm font-semibold ff-NunitoSans">Mensagem</label>
           <textarea
-            name="mensagem"
-            value={form.mensagem}
+            name="message"
+            value={form.message}
             onChange={handleChange}
             placeholder="Escreva sua mensagem..."
             rows={5}
