@@ -21,6 +21,12 @@ export default function SobreNos(){
     return (
         <>
             <section className="flex items-center justify-center flex-col p-35 bg-gray-200">
+                 <Image
+                    src="/images/sobrenos.png"
+                    alt="Marca dagua"
+                    fill
+                    className="object-contain opacity-20 pointer-events-none z-0"
+                />
                 <h1 className="ff-SourGummy-bold text-center text-6xl mb-10">Instituto Diomício Freitas: <br/>Transformando Vidas com Educação e Inclusão</h1>
                 <p className="ff-NunitoSans text-center w-1/2">Há mais de 35 anos, o Instituto Diomício Freitas promove a inclusão e o desenvolvimento de jovens e adultos com deficiência intelectual. Com foco na valorização das diferenças, a instituição oferece educação de qualidade e oportunidades para que cada aluno conquiste sua autonomia, exerça sua cidadania e seja protagonista de sua história. Aqui, cada passo dado é um avanço rumo a um futuro mais justo e igualitário para todos.  </p>
             </section>
