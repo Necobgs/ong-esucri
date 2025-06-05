@@ -1,0 +1,140 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Sour Gummy';
+  src: url('/fonts/Sour gummy/SourGummy-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('/fonts/Nunito Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype');
+}
+
+.titulo-padrao {
+  font-size: 64px; /* text-3xl */
+  font-weight: 700;     /* font-bold */
+  text-align: center;   /* text-center */
+  color: #10151C;       /* text-zinc-800 */
+}
+
+.card-texto {
+  padding: 5%;
+  background-color: rgba(230, 230, 230, 0.733);
+  border-radius: 2%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+  
+.card-texto:hover {
+  transform: translateY(-10px) scale(1.05);
+  background-color: rgba(240, 240, 240, 0.9);
+}
+
+p{
+  font-family: 'Nunito Sans';
+  font-weight: normal;
+}
+
+.ff-NunitoSans{
+  font-family: 'Nunito Sans';
+  font-weight:normal;
+  font-style: normal;
+}
+
+.ff-NunitoSans-bold{
+  font-family: 'Nunito Sans';
+  font-weight:bold;
+  font-style: normal;
+}
+
+.ff-SourGummy{
+  font-family: 'Sour Gummy';
+  font-weight:normal;
+  font-style: normal;
+}
+
+.ff-SourGummy-bold{
+  font-family: 'Sour Gummy';
+  font-weight:bold;
+  font-style: normal;
+}
+
+
+.card-carrossel-animated {
+  transform: scale(0.6) translateX(0%);
+  filter: brightness(0.6) blur(2px);
+  opacity: 0; /* Ajustado de 0% para 0 (valores de opacity são entre 0 e 1) */
+  z-index: 0; /* Menor prioridade de empilhamento */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-right {
+  transform: scale(0.8) translateX(60%);
+  filter: brightness(0.8) blur(1px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 1; /* Prioridade intermediária */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-activated {
+  transform: scale(1) translateX(0%);
+  filter: brightness(1) blur(0px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 2; /* Maior prioridade para o card ativo */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.card-carrossel-animated-left {
+  transform: scale(0.8) translateX(-60%);
+  filter: brightness(0.8) blur(1px);
+  opacity: 1; /* Ajustado de 100% para 1 */
+  z-index: 1; /* Prioridade intermediária */
+  transition: transform 1s ease-in-out, filter 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+/* Animação para aparecer da esquerda para a direita */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Animação para aparecer da direita para a esquerda */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Classe auxiliar para garantir que o elemento comece invisível */
+.invisible {
+  opacity: 0;
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: black !important; /* Vermelho */
+}
