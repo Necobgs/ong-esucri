@@ -15,25 +15,38 @@ export default function ContatoPage() {
   const [enviando, setEnviando] = useState(false)
   const [enviado, setEnviado] = useState(false)
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  async function handleSubmit(e: React.FormEvent) {
-  e.preventDefault()
-  setEnviando(true)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setEnviando(true)
 
-  console.log("Dados do formulário:", form) // ← aqui você vê no console do navegador
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
 
-  await new Promise((resolve) => setTimeout(resolve, 1500))
-
-  setForm({ nome: "", email: "", mensagem: "" })
-  setEnviando(false)
-  setEnviado(true)
-  setTimeout(() => setEnviado(false), 3000)
-}
-
+      if (response.ok) {
+        setForm({ nome: "", email: "", mensagem: "" })
+        setEnviado(true)
+        console.log("Mensagem enviada com sucesso!")
+      } else {
+        console.error("Erro ao enviar:", await response.text())
+      }
+    } catch (error) {
+      console.error("Erro inesperado:", error)
+    } finally {
+      setEnviando(false)
+      setTimeout(() => setEnviado(false), 3000)
+    }
+  }
 
   return (
     <section className="min-h-[100dvh] w-full flex flex-col px-[10%]">
