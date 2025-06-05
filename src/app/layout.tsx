@@ -23,6 +23,7 @@ export default function RootLayoutPage({
                 <li><Link href="/voluntariado">Voluntariado</Link></li>
                 <li><Link href="/noticias">Noticias</Link></li>
                 <li><Link href="/sobre-nos">Sobre nós</Link></li>
+                <li><Link href="/contato">Contato</Link></li>
             </ul>
             <div className="flex items-center justify-center">
                 <Button className="bg-[#BF9F58]">Faça uma doação</Button>
@@ -34,14 +35,9 @@ export default function RootLayoutPage({
           <footer className="h-[10dvh] w-full bg-[#9b85ff] p-60 flex items-center justify-between">
             <div className="flex flex-col items-start justify-around w-1/4 gap-5">
               <h4 className="ff-SourGummy-bold text-6xl text-start">Rodapé</h4>
-              <p className="ff-NunitoSans text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mi neque, finibus quis luctus sed.</p>
+              <p className="ff-NunitoSans text-start">Acompanhe nosso trabalho e faça parte da transformação.
+                                                      Juntos, podemos levar esperança, dignidade e novas oportunidades para quem mais precisa.</p>
                 <div className="flex items-center justify-around gap-15">
-                  <div className="flex items-center justify-center gap-5">
-                      <div>image</div>
-                      <div>
-                          <p className="ff-NunitoSans">Lorem ipsum</p>
-                      </div>
-                  </div>
                   <div className="flex items-center justify-center gap-5">
                       <div className="w-10 h-10">            
                         <img
@@ -56,7 +52,7 @@ export default function RootLayoutPage({
                 </div>
             </div>
             <Image
-                src="/images/image.png"
+                src="/icons/casa.svg"
                 alt="Imagem"
                 width={800}
                 height={200}

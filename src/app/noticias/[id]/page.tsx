@@ -1,10 +1,11 @@
+"use client"
 
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 async function fetchNews(id: string) {
-  const response = await fetch(`http://localhost:3000/posts/${id}`, {
+  const response = await fetch(`https://ong-esucri-backend.onrender.com/notice/${id}`, {
     cache: 'no-store',
   });
   if (!response.ok) return null;

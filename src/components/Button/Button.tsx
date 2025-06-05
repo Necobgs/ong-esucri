@@ -1,28 +1,23 @@
-// src/components/Button.tsx
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react"
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  type?: "button" | "submit" | "reset";
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  className?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  onClick,
   className = "",
-  type = "button",
+  ...rest
 }) => {
   return (
     <button
-      onClick={onClick}
-      type={type}
       className={`bg-[#000000] text-white text-base ff-SourGummy-bold py-3.5 px-6 rounded-full hover:bg-gray-800 transition ${className}`}
+      {...rest}
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
