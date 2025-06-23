@@ -6,7 +6,7 @@ import { useState } from "react"
 export default function Configurations() {
     const [configs, setConfigs] = useState([
         { key: "a", name: "Número do Whatsapp", value: "(48) 99679-4400", type: "varchar" },
-        { key: "b", name: "URL do instagram", value: "www.com", type: "text" },
+        { key: "b", name: "URL do instagram", value: "www.com", type: "varchar" },
         { key: "c", name: "Senha da API", value: "secreta", type: "password" },
         { key: "d", name: "Descrição", value: "Texto grande", type: "text" },
     ])
