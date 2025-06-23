@@ -113,14 +113,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <Drawer open={open} onClose={()=>setOpen(false)}>
         {DrawerList}
       </Drawer>
-      <header className="flex items-center justify-start p-5 bg-gray-50">
-        <div className="bg-gray-100 rounded-sm hover:bg-gray-150 hover:scale-110 transition-all duration-150 ease-in-out">
+      <header className="flex items-center justify-start bg-gray-50 h-[12dvh] pl-10">
+        <div className="bg-gray-200 rounded-sm hover:bg-gray-100 hover:scale-110 transition-all duration-150 ease-in-out">
           <Button onClick={()=>setOpen(true)}>
             <MenuIcon fontSize="large" />
           </Button>
         </div>
       </header>
-      {children}
+      <main className='w-full min-h-[88dvh]'>{children}</main>
     </>
   );
 }
