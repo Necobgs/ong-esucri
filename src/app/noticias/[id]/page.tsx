@@ -3,16 +3,10 @@
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { useParams, notFound } from "next/navigation"
+import Notice from "@/interfaces/notice"
+import { api } from "@/services/api"
 
-interface Notice {
-  id: string
-  title: string
-  description: string
-  notice_text: string
-  image?: string
-  created_at: string
-  view: number
-}
+
 
 export default function NewsPage() {
   const { id } = useParams()
@@ -20,27 +14,17 @@ export default function NewsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchNews() {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/notice/${id}`, {
-          cache: "no-store",
-        })
-        if (!res.ok) {
-          setNews(null)
-        } else {
-          const data = await res.json()
-          setNews(data)
-        }
-      } catch (err) {
-        console.error("Erro ao carregar notícia:", err)
-        setNews(null)
-      } finally {
+      api.get(`/notice/${id}`)
+      .then((response)=>{
+        setNews(response.data)
+      })
+      .catch((error)=>{
+        console.log(error)
+      })
+      .finally(()=>{
         setLoading(false)
-      }
-    }
-
-    if (id) fetchNews()
-  }, [id])
+      })
+  }, [])
 
   if (loading) return <p className="p-10">Carregando...</p>
   if (!news) return notFound()

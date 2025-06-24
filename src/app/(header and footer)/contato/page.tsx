@@ -4,6 +4,7 @@ import { useState } from "react"
 import Titulo from "@/components/Titulo/Titulo"
 import Button from "@/components/Button/Button"
 import { motion } from "framer-motion"
+import { api } from "@/services/api"
 
 export default function ContatoPage() {
   const [form, setForm] = useState({
@@ -24,29 +25,28 @@ export default function ContatoPage() {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setEnviando(true)
-
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/email`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      })
-
-      if (response.ok) {
-        setForm({ name: "", email_contact: "", subject: "", message: "" })
-        setEnviado(true)
-        console.log("Mensagem enviada com sucesso!")
-      } else {
-        console.error("Erro ao enviar:", await response.text())
+    e.preventDefault();
+    setEnviando(true);
+    console.log(form)
+    api.post('/email',form)
+    .then((response)=>{
+      setForm({ name: "", email_contact: "", subject: "", message: "" });
+      if(!response.data.sucess){
+        setEnviado(false);
+        alert(response.data.message)
+      }else{
+        setEnviado(true);
+        console.log("Mensagem enviada com sucesso!");
       }
-    } catch (error) {
-      console.error("Erro inesperado:", error)
-    } finally {
-      setEnviando(false)
-      setTimeout(() => setEnviado(false), 3000)
-    }
+      console.log(response.data)
+      })
+    .catch((error)=>{
+      console.error(`Erro ao enviar: ${error.message}`)
+    })
+    .finally(()=>{
+      setEnviando(false);
+      setTimeout(() => setEnviado(false), 3000);
+    })
   }
 
   return (
