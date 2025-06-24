@@ -74,7 +74,7 @@ export default function Noticias() {
                   id={notice.id}
                   title={notice.title}
                   description={notice.description}
-                  image={notice.image ? `${baseURL}/uploads/${notice.image}` : "/images/image.png"}
+                  image={notice.image}
                   created_at={notice.created_at}
                 />
               </SwiperSlide>
@@ -102,7 +102,7 @@ export default function Noticias() {
                   id={notice.id}
                   title={notice.title}
                   description={notice.description}
-                  image={notice.image ? `${baseURL}/uploads/${notice.image}` : "/images/image.png"}
+                  image={notice.image}
                   created_at={notice.created_at}
                 />
               </SwiperSlide>

@@ -20,7 +20,8 @@ export default function CardNews({ image, title, description, id, created_at }: 
 
   const baseURL = process.env.NEXT_PUBLIC_API_URL
   const imageUrl = image ? `${baseURL}/uploads/${image}` : "/images/image.png"
-  console.log("URL da API:", baseURL)
+  console.log("URL da API:", imageUrl)
+  console.log(id)
 
   return (
     <article className="rounded-2xl h-auto max-w-full flex flex-col items-center justify-start bg-gray-400">

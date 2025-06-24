@@ -1,53 +1,75 @@
 "use client"
 
-import { useEffect } from 'react';
-import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import Image from "next/image"
+import { useEffect, useState } from "react"
+import { useParams, notFound } from "next/navigation"
 
-async function fetchNews(id: string) {
-  const response = await fetch(`https://ong-esucri-backend.onrender.com/notice/${id}`, {
-    cache: 'no-store',
-  });
-  if (!response.ok) return null;
-  return response.json();
+interface Notice {
+  id: string
+  title: string
+  description: string
+  notice_text: string
+  image?: string
+  created_at: string
+  view: number
 }
 
-export default async function NewsPage({ params }: { params: { id: string } }) {
-//   const news = await fetchNews(params.id);
-const news = {
-        id:'j6kl4j6k5-fj6m4h6k=b4bjfjrh',
-        title:'Arrecadação no semáforo',
-        description:'Empenhados para mostrar nosso trabalho nas ruas, com gratidão nos olhos',
-        image:'/images/image.png',
-        views:15
+export default function NewsPage() {
+  const { id } = useParams()
+  const [news, setNews] = useState<Notice | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchNews() {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/notice/${id}`, {
+          cache: "no-store",
+        })
+        if (!res.ok) {
+          setNews(null)
+        } else {
+          const data = await res.json()
+          setNews(data)
+        }
+      } catch (err) {
+        console.error("Erro ao carregar notícia:", err)
+        setNews(null)
+      } finally {
+        setLoading(false)
+      }
     }
 
-  if (!news) {
-    notFound();
-  }
+    if (id) fetchNews()
+  }, [id])
 
-//   useEffect(() => {
-//     const viewedNews = JSON.parse(localStorage.getItem('viewedNews') || '[]');
-//     if (!viewedNews.includes(params.id)) {
-//       fetch(`http://localhost:3000/posts/${params.id}/views`, {
-//         method: 'PATCH',
-//       });
-//       viewedNews.push(params.id);
-//       localStorage.setItem('viewedNews', JSON.stringify(viewedNews));
-//     }
-//   }, [params.id]);
+  if (loading) return <p className="p-10">Carregando...</p>
+  if (!news) return notFound()
 
+  const imageURL = news.image?.startsWith("http")
+    ? news.image
+    : `${process.env.NEXT_PUBLIC_API_URL}/uploads/${news.image}`
+  
+    console.log(imageURL)
+    console.log("-----------------------------------------")
   return (
     <div className="pl-30 pr-30 pt-15 pb-15">
       <h1 className="ff-SourGummy-bold text-4xl">{news.title}</h1>
+
       <Image
-        src={news.image || '/images/image.png'}
+        src={imageURL}
         alt={news.title}
         width={800}
         height={400}
         className="w-full h-96 object-cover rounded-2xl mt-4"
       />
-      <p className="ff-NunitoSans mt-15">{news.description || 'Sem descrição'}</p>
+
+      <p className="ff-NunitoSans mt-10 text-lg text-gray-800">
+        {news.description || "Sem descrição"}
+      </p>
+
+      <div className="ff-NunitoSans mt-8 text-base whitespace-pre-line leading-relaxed">
+        {news.notice_text}
+      </div>
     </div>
-  );
+  )
 }
