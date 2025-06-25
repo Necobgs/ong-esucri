@@ -10,7 +10,7 @@ import renderField from "@/common/renderFieldConfiguration"
 import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
 
 
-export default function SocialMediaPage() {
+export default function FinancialPage() {
     const [configs, setConfigs] = useState<Configuration[]>([]);
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false); // Estado para salvar
@@ -20,7 +20,7 @@ export default function SocialMediaPage() {
 
 
     useEffect(() => {
-    api.get('/configuration', { params: { module_name: 'social', }})
+    api.get('/configuration', { params: { module_name: 'transaction', }})
       .then((response: AxiosResponse<Pagination<Configuration>>) => {
         setConfigs(response.data.items);
         setLoading(false);
@@ -76,13 +76,10 @@ export default function SocialMediaPage() {
     return (
         <div className="pl-20 pr-20 pt-10 pb-10">
             <SnackBarAlert message={message} severity={sucess ? "success" : "error"} visible={showMessage} />
-            <h1 className="font-semibold text-2xl font-sans pb-5">Redes Sociais</h1>
+            <h1 className="font-semibold text-2xl font-sans pb-5">Financeiro</h1>
             <Grid container spacing={3} columns={3}>
                 <Grid>
-                    {renderField("whatsapp_number",configs,handleChange)}
-                </Grid>
-                <Grid>
-                    {renderField("instagram_url",configs,handleChange)}
+                    {renderField("pix_key",configs,handleChange)}
                 </Grid>
             </Grid>
             <div className="mt-5 flex">

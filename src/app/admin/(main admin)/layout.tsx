@@ -61,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <ListItemButton sx={{ pl: 4 }} selected={isSelected('/admin/configurations/social-midia')} onClick={() => goToRoute('/admin/configurations/social-midia', 'social-midia')}>
               <ListItemText primary="Redes Sociais" />
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }} selected={isSelected('/admin/configurations/financeiro')} onClick={() => goToRoute('/admin/configurations/financeiro', 'financeiro')}>
+            <ListItemButton sx={{ pl: 4 }} selected={isSelected('/admin/configurations/financial')} onClick={() => goToRoute('/admin/configurations/financial', 'financial')}>
               <ListItemText primary="Financeiro" />
             </ListItemButton>
             <ListItemButton sx={{ pl: 4 }} selected={isSelected('/admin/configurations/email')} onClick={() => goToRoute('/admin/configurations/email', 'email')}>

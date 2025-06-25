@@ -1,6 +1,7 @@
 import Configuration from "@/interfaces/configuration"
 import getConfig from "./getConfig"
 import { TextField } from "@mui/material"
+import DraftEditor from "@/components/DraftEditor/DraftEditor"
 
 
 export default function renderField(configKey: string,configs:Configuration[],handleChange:(key: string, newValue: string) =>void){
@@ -16,18 +17,23 @@ export default function renderField(configKey: string,configs:Configuration[],ha
                         fullWidth
                     />
                 )
+            case 'html':
+                return (
+                    <DraftEditor 
+                    value={config.value}
+                    onChange={(e)=> handleChange(config.key,e)}/>
+                )
             case 'text':
                 return (
                     <TextField
                         label={config.name}
                         multiline
-                        minRows={15}
+                        minRows={10}
                         value={config.value}
                         onChange={(e) => handleChange(config.key, e.target.value)}
                         fullWidth
                     />
                 )
-            case 'varchar':
             default:
                 return (
                     <TextField

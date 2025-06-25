@@ -1,6 +1,6 @@
 'use client'
 
-import { Alert, Button, CircularProgress, Fade, Grid } from "@mui/material"
+import { Button, CircularProgress, Grid } from "@mui/material"
 import { useEffect, useState } from "react"
 import { api } from "@/services/api"
 import Configuration from "@/interfaces/configuration"
@@ -10,7 +10,7 @@ import renderField from "@/common/renderFieldConfiguration"
 import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
 
 
-export default function SocialMediaPage() {
+export default function Configurations() {
     const [configs, setConfigs] = useState<Configuration[]>([]);
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false); // Estado para salvar
@@ -20,7 +20,7 @@ export default function SocialMediaPage() {
 
 
     useEffect(() => {
-    api.get('/configuration', { params: { module_name: 'social', }})
+    api.get('/configuration', { params: { module_name: 'email', }})
       .then((response: AxiosResponse<Pagination<Configuration>>) => {
         setConfigs(response.data.items);
         setLoading(false);
@@ -76,13 +76,25 @@ export default function SocialMediaPage() {
     return (
         <div className="pl-20 pr-20 pt-10 pb-10">
             <SnackBarAlert message={message} severity={sucess ? "success" : "error"} visible={showMessage} />
-            <h1 className="font-semibold text-2xl font-sans pb-5">Redes Sociais</h1>
-            <Grid container spacing={3} columns={3}>
-                <Grid>
-                    {renderField("whatsapp_number",configs,handleChange)}
+            <h1 className="font-semibold text-2xl font-sans pb-5">Email</h1>
+            <Grid container spacing={3} columns={5}>
+                <Grid size={1}>
+                    {renderField("email_host",configs,handleChange)}
                 </Grid>
-                <Grid>
-                    {renderField("instagram_url",configs,handleChange)}
+                <Grid size={1}>
+                    {renderField("email_subject_contact",configs,handleChange)}
+                </Grid>
+                <Grid size={1}>
+                    {renderField("email_adress_sender",configs,handleChange)}
+                </Grid>
+                <Grid size={1}>
+                    {renderField("email_adress_receiver",configs,handleChange)}
+                </Grid>
+                <Grid size={1}>
+                    {renderField("email_passw",configs,handleChange)}
+                </Grid>
+                <Grid size={2} >
+                    {renderField("email_template_contact",configs,handleChange)}
                 </Grid>
             </Grid>
             <div className="mt-5 flex">
