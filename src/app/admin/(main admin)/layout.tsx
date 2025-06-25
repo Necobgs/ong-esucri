@@ -87,14 +87,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <ListItemText primary="Notícias" />
           </ListItemButton>
         </ListItem>
-
-        {/* Emails */}
-        <ListItem disablePadding>
-          <ListItemButton selected={isSelected('/admin/emails')} onClick={() => goToRoute('/admin/emails', 'emails2')}>
-            <ListItemIcon><MarkEmailUnreadIcon /></ListItemIcon>
-            <ListItemText primary="Emails" />
-          </ListItemButton>
-        </ListItem>
         <Divider/>
         <ListItem disablePadding>
         <ListItemButton>

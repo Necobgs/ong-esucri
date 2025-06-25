@@ -2,8 +2,8 @@
 
 export default function Admin(){
     return (
-        <div>
-            página de admin
+        <div className="w-full h-[85vh] flex items-center justify-center">
+            <h1><strong>Seja bem vindo ao painel de administração</strong></h1>
         </div>
     )
 }

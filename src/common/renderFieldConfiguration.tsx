@@ -21,7 +21,9 @@ export default function renderField(configKey: string,configs:Configuration[],ha
                 return (
                     <DraftEditor 
                     value={config.value}
-                    onChange={(e)=> handleChange(config.key,e)}/>
+                    onChange={(e)=> handleChange(config.key,e)}
+                    title={config.name}
+                    />
                 )
             case 'text':
                 return (
