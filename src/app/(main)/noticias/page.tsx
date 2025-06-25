@@ -21,17 +21,13 @@ interface Notice {
 export default function Noticias() {
   const [lastNews, setLastNews] = useState<Notice[]>([])
   const [mostViewed, setMostViewed] = useState<Notice[]>([])
-  const baseURL = process.env.NEXT_PUBLIC_API_URL
 
   useEffect(() => {
-    console.log('bbbbbbbb')
     api.get('/notice')
     .then((response)=>{
-        console.log('aaaaaaaaaaaa')
         console.log(response.data)
         setMostViewed(response.data)})
     .catch((error)=>{
-        console.log('deu ruim')
         console.log(error)
     })
 

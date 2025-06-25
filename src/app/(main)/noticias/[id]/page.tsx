@@ -32,9 +32,6 @@ export default function NewsPage() {
   const imageURL = news.image?.startsWith("http")
     ? news.image
     : `${process.env.NEXT_PUBLIC_API_URL}/uploads/${news.image}`
-  
-    console.log(imageURL)
-    console.log("-----------------------------------------")
   return (
     <div className="pl-30 pr-30 pt-15 pb-15">
       <h1 className="ff-SourGummy-bold text-4xl">{news.title}</h1>

@@ -1,17 +1,38 @@
 'use client'
 
-import { Grid, TextField } from "@mui/material"
-import { useState } from "react"
+import { Alert, Button, CircularProgress, Fade, Grid } from "@mui/material"
+import { useEffect, useState } from "react"
+import { api } from "@/services/api"
+import Configuration from "@/interfaces/configuration"
+import { AxiosResponse } from "axios"
+import Pagination from "@/interfaces/pagination"
+import renderField from "@/common/renderFieldConfiguration"
+import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
+
 
 export default function Configurations() {
-    const [configs, setConfigs] = useState([
-        { key: "a", name: "Número do Whatsapp", value: "(48) 99679-4400", type: "varchar" },
-        { key: "b", name: "URL do instagram", value: "www.com", type: "varchar" },
-        { key: "c", name: "Senha da API", value: "secreta", type: "password" },
-        { key: "d", name: "Descrição", value: "Texto grande", type: "text" },
-    ])
+    const [configs, setConfigs] = useState<Configuration[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [saving, setSaving] = useState(false); // Estado para salvar
+    const [sucess, setSucess] = useState<boolean>(false); // Estado para erros
+    const [message, setMessage] = useState<string | null>(null); // Estado para sucesso
+    const [showMessage, setShowMessage] = useState(false);
 
-    const getConfig = (key: string) => configs.find(c => c.key === key)!
+
+    useEffect(() => {
+    api.get('/configuration', { params: { module_name: 'social', }})
+      .then((response: AxiosResponse<Pagination<Configuration>>) => {
+        setConfigs(response.data.items);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.log('Erro ao buscar configurações');
+        console.error(e);
+        setLoading(false);
+      });
+  }, []); // Empty dependency array
+
+    
 
     const handleChange = (key: string, newValue: string) => {
         setConfigs(prev =>
@@ -21,60 +42,59 @@ export default function Configurations() {
         )
     }
 
-    const renderField = (configKey: string) => {
-        const config = getConfig(configKey)
-        switch (config.type) {
-            case 'password':
-                return (
-                    <TextField
-                        label={config.name}
-                        type="password"
-                        value={config.value}
-                        onChange={(e) => handleChange(config.key, e.target.value)}
-                        fullWidth
-                    />
-                )
-            case 'text':
-                return (
-                    <TextField
-                        label={config.name}
-                        multiline
-                        minRows={15}
-                        value={config.value}
-                        onChange={(e) => handleChange(config.key, e.target.value)}
-                        fullWidth
-                    />
-                )
-            case 'varchar':
-            default:
-                return (
-                    <TextField
-                        label={config.name}
-                        value={config.value}
-                        onChange={(e) => handleChange(config.key, e.target.value)}
-                        fullWidth
-                    />
-                )
-        }
+    const handleSave = async () => {
+        setSaving(true);
+        setSucess(false);
+        setMessage(null);
+
+
+            await api.patch(`/configuration`,configs)
+                .then(()=>{
+                    console.log(`Atualizado com sucesso`)
+                    setMessage('Configurações salvas com sucesso!');
+                    setShowMessage(true)
+                    setSucess(true)
+                    setTimeout(() => {
+                        setShowMessage(false)
+                        setTimeout(() => setMessage(null), 500); // Remove texto após o fade
+                    }, 5000);
+                })
+                .catch((error)=>{
+                    console.log(`Não foi possível atualizar: ${error}`)
+                    setMessage(error.response?.data?.message || 'Erro ao salvar configurações');
+                })
+                .finally(()=>{
+                    setSaving(false);
+                })
+
+    };
+
+    if (loading) {
+        return <div>Carregando...</div>;
     }
 
     return (
         <div className="pl-20 pr-20 pt-10 pb-10">
+            <SnackBarAlert message={message} severity={sucess ? "success" : "error"} visible={showMessage} />
             <h1 className="font-semibold text-2xl font-sans pb-5">Redes Sociais</h1>
             <Grid container spacing={3} columns={3}>
                 <Grid>
-                    {renderField("a")}
+                    {renderField("whatsapp_number",configs,handleChange)}
                 </Grid>
                 <Grid>
-                    {renderField("b")}
-                </Grid>
-                <Grid>
-                    {renderField("c")}
-                </Grid>
-                <Grid size={3}>
-                    {renderField("d")}
+                    {renderField("instagram_url",configs,handleChange)}
                 </Grid>
             </Grid>
+            <div className="mt-5 flex">
+                <Button
+                    variant="contained"
+                    onClick={handleSave}
+                    disabled={saving}
+                    startIcon={saving ? <CircularProgress size={20} /> : null}
+                >
+                    {saving ? 'Salvando...' : 'Salvar Configurações'}
+                </Button>
+            </div>
         </div>
     )
 }
