@@ -26,7 +26,7 @@ export default function Noticias() {
     api.get('/notice')
     .then((response)=>{
         console.log(response.data)
-        setMostViewed(response.data)})
+        setMostViewed(response.data.data)})
     .catch((error)=>{
         console.log(error)
     })
@@ -36,7 +36,7 @@ export default function Noticias() {
             order:'DESC',
             sortBy:'created_at'
         }})
-    .then((response)=>setLastNews(response.data))
+    .then((response)=>setLastNews(response.data.data))
 
 }, [])
 
