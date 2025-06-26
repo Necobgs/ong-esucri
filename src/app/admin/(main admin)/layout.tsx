@@ -123,7 +123,7 @@ export function LayoutContent({ children }: Readonly<{ children: React.ReactNode
 
         {/* Notícias */}
         <ListItem disablePadding>
-          <ListItemButton selected={isSelected('/admin/news')} onClick={() => goToRoute('/admin/news', 'news')}>
+          <ListItemButton selected={isSelected('/admin/notice')} onClick={() => goToRoute('/admin/notice', 'notice')}>
             <ListItemIcon><NewspaperIcon /></ListItemIcon>
             <ListItemText primary="Notícias" />
           </ListItemButton>

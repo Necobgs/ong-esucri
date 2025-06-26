@@ -34,7 +34,6 @@ export default function SocialMediaPage() {
       });
   }, []); // Empty dependency array
 
-    
 
     const handleChange = (key: string, newValue: string) => {
         setConfigs(prev =>
