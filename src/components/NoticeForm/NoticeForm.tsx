@@ -14,7 +14,7 @@ import NoticeFormProps from '@/interfaces/NoticeFormProps';
 
 const NoticeForm: React.FC<NoticeFormProps> = ({
   onSave,
-  onCancel,
+  onRemove,
   isEditing = false,
   initialData,
 }) => {
@@ -171,6 +171,19 @@ const NoticeForm: React.FC<NoticeFormProps> = ({
           </div>
 
           <div style={{ display: 'flex', gap: '1rem' }}>
+            {
+              isEditing
+              &&
+              <Button
+              type="button"
+              variant="outlined"
+              onClick={onRemove}
+              color='error'
+              fullWidth
+            >
+              Excluir 
+            </Button>
+            }
             <Button
               type="submit"
               variant="contained"
@@ -183,14 +196,6 @@ const NoticeForm: React.FC<NoticeFormProps> = ({
                 : isEditing
                 ? 'Atualizar notícia'
                 : 'Criar notícia'}
-            </Button>
-            <Button
-              type="button"
-              variant="outlined"
-              onClick={onCancel}
-              fullWidth
-            >
-              Cancelar
             </Button>
           </div>
         </form>

@@ -1,22 +1,24 @@
 'use client'
 
 import NoticeForm from "@/components/NoticeForm/NoticeForm";
+import UserForm from "@/components/UserForm/UserForm";
 import { useAuth } from "@/contexts/AuthContext";
+import userFormData from "@/interfaces/UserFormData";
 import { api } from "@/services/api";
 import { useRouter } from "next/navigation";
 
 
 export default function CreateNoticePage(){
     const authContext = useAuth()
+    const router = useRouter()
 
-    async function Save(data:FormData){
-        await api.post('notice',data,{
+    async function save(user:userFormData){
+        await api.post('user',user,{
             headers:{
-                ...authContext.getAuthorization(),
-                // 'Content-Type': 'multipart/form-data'
+                ...authContext.getAuthorization()
             }
         }).then((response)=>{
-            console.log(response)
+            router.push(`/admin/users/${response.data.id}`)
         }).catch((error)=>{
             throw new Error(error)
         })
@@ -24,9 +26,9 @@ export default function CreateNoticePage(){
 
     return (
         <div className="w-full h-full flex items-center justify-center">
-            <NoticeForm
+            <UserForm
                 isEditing={false}
-                onSave={Save}
+                onSave={save}
             />
         </div>
     )

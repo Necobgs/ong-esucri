@@ -1,8 +1,8 @@
-import NoticeFormData from "./NoticeFormData";
+
 
 export default interface NoticeFormProps {
   onSave: (formData: FormData) => Promise<void>;
-  onCancel: () => void;
+  onRemove?: () => void;
   isEditing?: boolean;
   initialData?: {
     title: string;

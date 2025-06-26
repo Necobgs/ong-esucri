@@ -1,24 +1,24 @@
 'use client'
 
-import NoticeForm from "@/components/NoticeForm/NoticeForm";
+import UserForm from "@/components/UserForm/UserForm";
 import { useAuth } from "@/contexts/AuthContext";
 import { api } from "@/services/api";
-import NoticeFormData from "@/interfaces/NoticeFormData";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Notice from "@/interfaces/notice";
+import User from "@/interfaces/user";
+import userFormData from "@/interfaces/UserFormData";
 
 
-export default function EditNoticePage(){
+export default function EditUserPage(){
     const router = useRouter()
     const { id } = useParams()
     const authContext = useAuth()
-    const [notice, setNotice] = useState<Notice | undefined>()
+    const [user, setUser] = useState<User | undefined>()
     const [isLoading,setIsLoading] = useState(true)
 
     useEffect(()=>{
-        api.get(`/notice/${id}`).then((response)=>{
-            setNotice(response.data)
+        api.get(`/user/${id}`).then((response)=>{
+            setUser(response.data)
         }).catch((error)=>{
             console.log(error)
         }).finally(()=>{
@@ -28,8 +28,8 @@ export default function EditNoticePage(){
 
     if(isLoading) return (<div>Carregando...</div>)
 
-    async function save(data:FormData){
-        await api.patch(`/notice/${id}`,data,{
+    async function save(user:userFormData){
+        await api.patch(`/user/${id}`,user,{
             headers:{...authContext.getAuthorization(),
                 'Content-Type': 'multipart/form-data',
             },
@@ -38,26 +38,12 @@ export default function EditNoticePage(){
         })
     }
 
-    async function remove(){
-        await api.delete(`/notice/${id}`,{
-            headers:authContext.getAuthorization()
-        })
-        .then(()=>{
-            router.push('/admin/notice')
-        })
-        .catch((error)=>{
-            console.log(`Erro ao remover a noticia: ${error.message}`)
-            throw new Error(error)
-        })
-    }
-
     return (
         <div className="w-full h-full flex items-center justify-center">
-            <NoticeForm
-                onRemove={remove}
+            <UserForm
                 isEditing={true}
                 onSave={save}
-                initialData={notice}
+                initialData={user}
             />
         </div>
     )

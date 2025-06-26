@@ -41,10 +41,12 @@ export default function News(){
                 <div className="mt-5 mb-5 w-full flex justify-end items-end">
                     <Button variant="contained" onClick={()=>{router.push('/admin/notice/create')}}>Adicionar notícia</Button>
                 </div>
-                <Grid container spacing={3} columns={4}>
+                <Grid container spacing={3} columns={{sm:1,md:2,lg:3,xl:4,xs:1}}>
                 {notices.map((notice)=>(
                     <Grid size={1} key={notice.id}>
-                        <Card >
+                        <Card
+                        style={{height:340}}
+                        >
                             <CardActionArea
                                 onClick={() => router.push(`/admin/notice/${notice.id}`)}
                                 sx={{
@@ -56,6 +58,7 @@ export default function News(){
                                     },
                                 },
                                 }}
+                                style={{display:'flex',alignItems:'flex-start',justifyContent:'flex-start',flexDirection:'column'}}
                             >
                                 <CardMedia
                                 component="img"
@@ -65,16 +68,23 @@ export default function News(){
                                 alt={notice.title}
                                 />
                                 <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {notice.title}
-                                </Typography>
-                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                    {notice.description}
-                                </Typography>
-                                <Typography gutterBottom variant="overline" component="div">
-                                    {formatDate(notice.created_at)}
-                                </Typography>
-    </CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {notice.title}
+                                    </Typography>
+                                    <Typography variant="body2" sx={{
+                                        color: 'text.secondary',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3, // Limita a 3 linhas
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        }} >
+                                        {notice.description}
+                                    </Typography>
+                                    <Typography gutterBottom variant="overline" component="div">
+                                        {formatDate(notice.created_at)}
+                                    </Typography>
+                                </CardContent>
                             </CardActionArea>
                         </Card>
                     </Grid>
