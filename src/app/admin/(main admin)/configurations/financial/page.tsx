@@ -8,6 +8,7 @@ import { AxiosResponse } from "axios"
 import Pagination from "@/interfaces/pagination"
 import renderField from "@/common/renderFieldConfiguration"
 import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
+import { useAuth } from "@/contexts/AuthContext"
 
 
 export default function FinancialPage() {
@@ -17,7 +18,7 @@ export default function FinancialPage() {
     const [sucess, setSucess] = useState<boolean>(false); // Estado para erros
     const [message, setMessage] = useState<string | null>(null); // Estado para sucesso
     const [showMessage, setShowMessage] = useState(false);
-
+    const authContext = useAuth()
 
     useEffect(() => {
     api.get('/configuration', { params: { module_name: 'transaction', }})
@@ -48,7 +49,9 @@ export default function FinancialPage() {
         setMessage(null);
 
 
-            await api.patch(`/configuration`,configs)
+            await api.patch(`/configuration`,configs,{
+                headers: authContext.getAuthorization()
+            })
                 .then(()=>{
                     console.log(`Atualizado com sucesso`)
                     setMessage('Configurações salvas com sucesso!');
@@ -77,8 +80,8 @@ export default function FinancialPage() {
         <div className="pl-20 pr-20 pt-10 pb-10">
             <SnackBarAlert message={message} severity={sucess ? "success" : "error"} visible={showMessage} />
             <h1 className="font-semibold text-2xl font-sans pb-5">Financeiro</h1>
-            <Grid container spacing={3} columns={3}>
-                <Grid>
+            <Grid container spacing={3} columns={4}>
+                <Grid size={2}>
                     {renderField("pix_key",configs,handleChange)}
                 </Grid>
             </Grid>

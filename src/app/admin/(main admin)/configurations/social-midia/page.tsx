@@ -8,6 +8,7 @@ import { AxiosResponse } from "axios"
 import Pagination from "@/interfaces/pagination"
 import renderField from "@/common/renderFieldConfiguration"
 import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
+import { useAuth } from "@/contexts/AuthContext"
 
 
 export default function SocialMediaPage() {
@@ -17,6 +18,7 @@ export default function SocialMediaPage() {
     const [sucess, setSucess] = useState<boolean>(false); // Estado para erros
     const [message, setMessage] = useState<string | null>(null); // Estado para sucesso
     const [showMessage, setShowMessage] = useState(false);
+    const authContext = useAuth()
 
 
     useEffect(() => {
@@ -48,7 +50,9 @@ export default function SocialMediaPage() {
         setMessage(null);
 
 
-            await api.patch(`/configuration`,configs)
+            await api.patch(`/configuration`,configs,{
+                headers:authContext.getAuthorization()
+            })
                 .then(()=>{
                     console.log(`Atualizado com sucesso`)
                     setMessage('Configurações salvas com sucesso!');
@@ -78,10 +82,10 @@ export default function SocialMediaPage() {
             <SnackBarAlert message={message} severity={sucess ? "success" : "error"} visible={showMessage} />
             <h1 className="font-semibold text-2xl font-sans pb-5">Redes Sociais</h1>
             <Grid container spacing={3} columns={3}>
-                <Grid>
+                <Grid size={1}>
                     {renderField("whatsapp_number",configs,handleChange)}
                 </Grid>
-                <Grid>
+                <Grid size={1}>
                     {renderField("instagram_url",configs,handleChange)}
                 </Grid>
             </Grid>

@@ -8,6 +8,7 @@ import { AxiosResponse } from "axios"
 import Pagination from "@/interfaces/pagination"
 import renderField from "@/common/renderFieldConfiguration"
 import SnackBarAlert from "@/components/SnackBarAlert/SnackBarAlert"
+import { useAuth } from "@/contexts/AuthContext"
 
 
 export default function Configurations() {
@@ -17,7 +18,7 @@ export default function Configurations() {
     const [sucess, setSucess] = useState<boolean>(false); // Estado para erros
     const [message, setMessage] = useState<string | null>(null); // Estado para sucesso
     const [showMessage, setShowMessage] = useState(false);
-
+    const authContext = useAuth()
 
     useEffect(() => {
     api.get('/configuration', { params: { module_name: 'email', }})
@@ -48,7 +49,9 @@ export default function Configurations() {
         setMessage(null);
 
 
-            await api.patch(`/configuration`,configs)
+            await api.patch(`/configuration`,configs,{
+                headers: authContext.getAuthorization()
+            })
                 .then(()=>{
                     console.log(`Atualizado com sucesso`)
                     setMessage('Configurações salvas com sucesso!');

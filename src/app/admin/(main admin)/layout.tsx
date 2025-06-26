@@ -19,16 +19,57 @@ import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import { usePathname, useRouter } from 'next/navigation';
 import { Collapse } from '@mui/material';
 import { LogoutOutlined } from '@mui/icons-material';
+import Cookies from 'js-cookie'; // Biblioteca para gerenciar cookies
+import { api } from '@/services/api';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+  return (
+    <AuthProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </AuthProvider>
+  );
+}
+
+
+export function LayoutContent({ children }: Readonly<{ children: React.ReactNode; }>) {
   const pathname                        = usePathname();
   const router                          = useRouter();
   const [open, setOpen]                 = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState('');
   const [openCollapse, setOpenCollapse] = React.useState(false);
+  const [isLoading,setIsLoading] = React.useState(true);
+  const authContext = useAuth()
+
 
   const isSelected = (target: string) => pathname === target;
 
+  React.useEffect(() => {
+    const verifyToken = async () => {
+      const authorization = authContext.getAuthorization(); // Obtém token do cookie
+      if (!authorization) {
+        router.push('/admin/login');
+        return;
+      }
+        // Exemplo: Valida token com uma API
+        authContext.isLoged()
+          .then((response)=>{
+            if (response.status != 200) {
+              Cookies.remove('token');
+              router.push('/admin/login');
+            }
+          })
+          .catch((error)=>{
+            console.error('Erro ao verificar token:', error);
+            router.push('/admin/login');
+          })
+          .finally(()=>{
+            setIsLoading(false);
+          })}
+ 
+
+    verifyToken();
+  }, [router]);
 
 
   const goToRoute = (route: string, id: string) => {
@@ -100,6 +141,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </Box>
   );
 
+  if(isLoading) return (<div>Carregando...</div>)
+
   return (
     <>
       <Drawer open={open} onClose={()=>setOpen(false)}>
@@ -112,7 +155,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Button>
         </div>
       </header>
-      <main className='w-full min-h-[88dvh]'>{children}</main>
+      <main className='w-full min-h-[88dvh]'>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </main>
     </>
   );
 }
